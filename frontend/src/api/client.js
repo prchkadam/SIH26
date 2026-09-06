@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const client = axios.create({ baseURL: import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://sih26-r5m7.onrender.com/api' : '/api') })
+const client = axios.create({ baseURL: import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://sih26-r5m7.onrender.com' : '/api') })
 
 client.interceptors.request.use((config) => {
   const token = localStorage.getItem('nexus_token')
