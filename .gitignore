@@ -1,9 +1,11 @@
 backend/venv/
+backend/.venv/
 backend/__pycache__/
 backend/**/__pycache__/
 backend/storage/*.db
 backend/storage/*.json
 *.pyc
+.DS_Store
 
 frontend/node_modules/
 frontend/dist/

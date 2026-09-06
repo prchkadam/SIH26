@@ -12,7 +12,6 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules/cytoscape')) return 'graph'
-          if (id.includes('node_modules/recharts')) return 'charts'
           if (
             id.includes('node_modules/react/') ||
             id.includes('node_modules/react-dom/') ||
