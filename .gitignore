@@ -6,6 +6,7 @@ backend/storage/*.db
 backend/storage/*.json
 *.pyc
 .DS_Store
+.env
 
 frontend/node_modules/
 frontend/dist/

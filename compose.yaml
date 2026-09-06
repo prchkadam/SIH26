@@ -1,0 +1,39 @@
+services:
+  api:
+    build:
+      context: ./backend
+    env_file: .env
+    environment:
+      DATA_DIR: /app/storage
+    expose:
+      - "8000"
+    volumes:
+      - criminalnet_data:/app/storage
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    expose:
+      - "80"
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2.8-alpine
+    env_file: .env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+      - frontend
+    restart: unless-stopped
+
+volumes:
+  criminalnet_data:
+  caddy_data:
+  caddy_config:
