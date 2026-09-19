@@ -1,0 +1,3 @@
+# Install only for configured large-scale semantic matching.
+sentence-transformers>=3.0,<6.0
+faiss-cpu>=1.8,<2.0
